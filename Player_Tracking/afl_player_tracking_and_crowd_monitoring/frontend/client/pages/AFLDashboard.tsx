@@ -1496,13 +1496,25 @@ Export ID: ${Date.now()}-${Math.random().toString(36).substr(2, 9)}
       (selectedTeam === "all" || player.team === selectedTeam),
   );
 
+  const navigates = useNavigate();
+
+  const goToHome = () => {
+    navigates("/afl-dashboard");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
       {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <button
+              type="button"
+              onClick={goToHome}
+              className="flex items-center space-x-4 text-left hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg"
+              aria-label="Go to home page"
+              title="Go to home page"
+            >
               <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-blue-600 rounded-lg flex items-center justify-center">
                 <Activity className="w-6 h-6 text-white" />
               </div>
@@ -1514,7 +1526,7 @@ Export ID: ${Date.now()}-${Math.random().toString(36).substr(2, 9)}
                   Real-time match insights & player analytics
                 </p>
               </div>
-            </div>
+            </button>
             <div className="flex items-center space-x-4">
               <Badge
                 variant={isLive ? "destructive" : "secondary"}
