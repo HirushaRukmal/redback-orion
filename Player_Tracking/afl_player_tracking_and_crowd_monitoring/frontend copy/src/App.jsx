@@ -711,8 +711,3 @@ function App() {
           { time: '5-10min', teamA: 58, teamB: 42 },
           { time: '10-15min', teamA: 72, teamB: 28 },
           { time: '15-20min', teamA: 45, teamB: 55 },
-        ],
-      }
-    }
-  }, [])
-}
